@@ -1,0 +1,2 @@
+- apart from mods like 1e9+7, or 998244353 if we get another mod , question MIGHT have to do something around it
+- like if mod is 1e6+3 (very small), so it is mostly for stopping from mutliplication include 1e6+3 term as it will have mod 0. > https://codeforces.com/problemset/problem/2171/G , in this question it is to prune factorials after 1e6+3.
