@@ -9,3 +9,21 @@
 - THINK ABOUT NON TRIVAL CASES, COMBINATIONS .
 
 - proves are mostly by contradiction with some maths axioms or question constraints or observations.
+
+
+# Different Distances [https://codeforces.com/contest/2233/problem/B]
+- lets say i know how to make array for n==2  (make array of lenght 8), 
+        => then i can find answer for even n , just appended n==2 for (1,2), (3,4) ,(5,6) ..
+- what about n is odd .
+-    lets say i can make answer array for n==3 , then odd number can be made by combining 1 n==3 array and rest of n==2
+        >example : n==7 -> (1,2,3) , (4,5) , (6,7)
+>type of questions where u can find soltuion for some smaller parts and then combine them to get answer of bigger part  
+> CONDITION => EACH PART ANSWER OF INDEPENDENT OF EACH OTHER.
+
+
+# Longest Max Min Subsequence [https://codeforces.com/problemset/problem/2001/D]
+- here we need to find an specific type of subsequence and best out of all subsequence satisfying conditions.
+- given we require unique elements, maintain a vector bool for ensure we dont take them again,
+- vector v with ptr m , ensureing a limit on region we can take suitable elements from ,cuz we might skip element that we havent taken and as a result not take it at all.
+- priority_queues to get the best array satisfying specific type of condition. 
+>type of questions where u r given a condition and form a suitable optimal algorithm about it

@@ -1,3 +1,28 @@
+# type of knapsacks
+> 0/1 knapsack
+> bound kanpsack
+> unbound knapsack
+
+# KNAPSACK IS USED FOR
+> standard knapsack where each item have a value and weight and within wt constraint what is the maximum/minimum value that can be obtained.
+> check if a target can be reached or not {subset sum}
+> check if a maximum/minimum can be reached or not {subset sum} 
+> minimum number of items required to reach target 
+> maximum number of items required to reach target 
+> count ways
+
+# additional there might be other constraints to also . [MULTIDIMENSION KNAPSACK]
+> example -> pick k elements and count ways to make total sum ==t.
+    =>here standard count knapsack with another dimention (number of times taken).
+>note in this example normal knapsack (1d no other dimension count ways) => takes 1 element at a time. But when we add this dimension , IT ESSENTIALLY STARTS GIVNG US DISTINCT PERMUTATIONS.
+
+
+# standard questions where this is used
+- partition/equal subset sum ->partition arr into 2 parts such that difference is minimum
+- target sum
+- coin change -> minimum knapsack
+- count ways
+
 # there are 3 types of knapsacks
 
 ## 0/1 knapsack 
@@ -108,7 +133,7 @@ if(dp[C]==1){
 >    // bs[3] is 1 (leftmost)
 
 #### USE CASE OF KNAPSACK OPTIMIZATION
-- https://codeforces.com/contest/2138/problem/C1
+# Maple and Tree Beauty (Easy Version) [https://codeforces.com/contest/2138/problem/C1]
 ```cpp
 #include <bits/stdc++.h>
 #include<ext/pb_ds/assoc_container.hpp>
@@ -188,7 +213,7 @@ int main(){
     }
 }
 ```
-- https://codeforces.com/problemset/problem/2138/C2
+# Maple and Tree Beauty (Hard Version) [https://codeforces.com/problemset/problem/2138/C2]
 ```cpp
 #include <bits/stdc++.h>
 #include<ext/pb_ds/assoc_container.hpp>
@@ -291,3 +316,9 @@ for (ll i = 0; i < n; i++) {
 	}
 }
 ```
+
+
+# Abhinav's Lost Array [https://codeforces.com/group/NpnwJNnkjM/contest/696453/problem/G]
+- it is obvious we want to consider remainders
+- this is count ways , pick an element => counting knapsack
+- BUT NOW THERE IS ANOTHER DIMENSION IN TERMS OF NUMBER OF ELEMENTS TAKEN (lenght of arr) => this essentailly helps us finding permutaations    

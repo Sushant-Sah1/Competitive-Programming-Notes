@@ -25,3 +25,16 @@
 - priority_queue
 - sliding window
 - segment tree
+
+
+> graph/tree algorithms
+- dfs
+- bfs
+- multisource bfs
+- dijsktra
+- graph to mst (best using dsu -> check if the given edge is required {only if 2 nodes r not connected}) = use Kruskal's Algorithm
+- bipartite
+- cycle detection
+- topographic sort
+- diameter
+- lowest common ancestor    
