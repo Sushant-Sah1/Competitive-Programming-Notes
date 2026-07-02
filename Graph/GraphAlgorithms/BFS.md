@@ -40,7 +40,7 @@
 ```
 
 
-### BFS envolving only traversal and no sorting of points on the basis of levels
+### BFS traversal
 ```cpp
 void bfs(vector<vector<ll>>adj,vector<bool>&vis,ll cur){
     queue<ll>q;

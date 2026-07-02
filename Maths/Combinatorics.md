@@ -7,7 +7,7 @@
 - similiar for the column being odd.
 
 
-# Total Matching Pairs [https://codeforces.com/group/NpnwJNnkjM/contest/696453/problem/DI]
+## Total Matching Pairs [https://codeforces.com/group/NpnwJNnkjM/contest/696453/problem/DI][inferos group placement and internship 2026 contest]  [#2]
 - standard technique of problem solving . instead of trying to find score for each subarray , count in how many windows a given pair comes. 
 >[THIS IS PRETTY SIMILAR TO FINDING EXPECTATION VALUE IN SOME QUESTIONS {GIVEN X MEN AND Y WOMEN STIING IN (X+Y) CHAIRS LINED TOGETHER , WHAT IS THE EXPECTATION VALUE OF THE NUMBER PAIRS SITTING TOGETHER .=> HERE FOR EACH PAIR FIND EXPECTATION OF TIMES A PAIR OF OPPOSITE GENDER WILL SIT ON IT . BY LINEARITY OF EXPECTATION VALUE WE FIND THE EXPECTATION OF NUMBER OPPOSITE GENDERS SITTING SIDE BY SIDE AS SUM OF EXPECTATION OF EACH ADJACENT SEATS}]
 - now the for counting the number of windows this pair will be present is use this concept ->
@@ -15,6 +15,46 @@
 - now if we go by naive way , we get tc n^2 ... we cant do it...
 - SO finally to convert it to n , we will use map . at each i ans+=count(i to end)*mp[a[i]],in map[a[i]] add (i+1)-> number ofelements from st to ith indx .
 - why ? => lets i , j be same as k . ans= [st,i]*[k,end]+[st,j]*[k,end]=> ([st,i]+[st,j])*[k,end] . now for next same a[idx] . we will also place [st,k] in map so we could directly mutliple.
+```cpp
+void f(){
+    long long n;cin>>n;
+    vector<ll>a;
+    for(int i=0;i<n;i++){
+        ll x;cin>>x;
+        a.push_back(x);
+    }
+    map<ll,ll>mp;
+    ll ans=0;
+    for(int i=0;i<n;i++){
+        ans+=(mp[a[i]]*(n-i));
+        mp[a[i]]+=(i+1);
+    }
+    cout<<ans<<endl;
+}
+```
+
+
+
+## Counting Is Fun [https://codeforces.com/gym/106179/problem/E]
+- notice that if 1 is on 1 child and 2 is on another child of root , then we can traverse all childs not having 1 [that includes 2 here for example] , and then we then only need to increment once to pass 1 edge then nothing will obstruct as we already passed 2 edge.
+- note the get increment of c, we need 1,2,3 .. c in a path [path from root to any one of the node].
+ also note we also need to comeback to root so order can be root|4 1 2 3 |lead for c=4.
+
+- numbers of ways to order for c=n is 2^(n-1).
+
+- now note if we try picking c nodes from leaf, it is be overlapping . 2 leaves can choose all elements in the common path.
+
+> no we can can do is do dfs and for each node pick it always and pick (c-1) from the number of edges from root to this node. this will have unqiue node selection.
+### remember if combinations are overlapping , fixing points one by ones and choosing from other like the what we r doing here always enures non overlapping combinations
+
+- now another thing is about picking up positions for others. MOST IMPORTANTLY C+1.cuz if it is the path of this then then minimum number of operation b is not equal to c. 
+- picking all the positions rnadomly [(n-1-c)!] doesnt confirms that minimum number of operations is c exectly , BUT CONFIRMS IT IS ATLEAST C.
+
+> now we can use one of the most useful techinques in combinatorics, 
+### remember this in combinatroics if f(x) is the ways to get alteast , then to get wyas exactly x we do  f(x)-f(x+1).
+
+> so for answer we just find answer for c and substract what we get for (c+1).
+
 
 
 # Abhinav's Lost Array [https://codeforces.com/group/NpnwJNnkjM/contest/696453/problem/G]
@@ -35,3 +75,7 @@
 > why dp ? => if we can get all distinct permuations for arr till i-1 having raminder (J-remainder+3)%3 , we can get distinct permuations for arr till i having remainder j.
 
 > knapsack variant
+
+
+
+
